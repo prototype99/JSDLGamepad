@@ -12,7 +12,7 @@ rm -f ./bin/*.*
 
 : "------------------------------------------------------------------- generate"
 cd src/swig
-swig4.0 -java -v -package com.r6753.sdlgamepad \
+swig -java -v -package com.r6753.sdlgamepad \
   -outcurrentdir -outdir . \
   ../../JSDLGamepad_SwigInterface.i
 cd ../..
@@ -23,7 +23,7 @@ javac -d bin src/*.java src/swig/*.java
 :
 
 ./build-native-lin.sh
-./build-native-win.sh
+#./build-native-win.sh
 
 : "------------------------------------------------------------------- java jar"
 cd bin
